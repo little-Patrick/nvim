@@ -39,6 +39,7 @@ return {
 			lspconfig.lua_ls.setup { capabilities = capabilities }
 			lspconfig.harper_ls.setup { capabilities = capabilities }
 			lspconfig.ts_ls.setup { capabilities = capabilities }
+
 			-- Keymap for LSP functions
 			local on_attach = function(_, bufnr)
 				local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -67,7 +68,7 @@ return {
 			end
 
 			-- Apply the `on_attach` function to all LSPs
-			local servers = { "lua_ls", "harper_ls" }
+			local servers = { "lua_ls", "harper_ls" , "ts_ls" }
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup {
 					capabilities = capabilities,
