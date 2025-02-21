@@ -27,6 +27,12 @@ vim.keymap.set("n", "<leader><leader>w", "<cmd>source %<CR>")
 vim.keymap.set("n", "<leader>w", ":.lua<CR>")
 vim.keymap.set("v", "<leader>w", ":.lua<CR>")
 
+				-- Window Navigation --
+vim.keymap.set("n", "<M-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<M-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<M-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<M-l>", ":wincmd l<CR>")
+
 				-- Quick Fix --
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
@@ -51,10 +57,10 @@ vim.keymap.set("n", "<leader>st", function()
 end)
 
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })   -- Exit terminal mode with Esc
-vim.keymap.set('t', '<C-h>', [[<C-\><C-n><C-w>h]], { noremap = true }) -- Move left
-vim.keymap.set('t', '<C-j>', [[<C-\><C-n><C-w>j]], { noremap = true }) -- Move down
-vim.keymap.set('t', '<C-k>', [[<C-\><C-n><C-w>k]], { noremap = true }) -- Move up
-vim.keymap.set('t', '<C-l>', [[<C-\><C-n><C-w>l]], { noremap = true }) -- Move right
+vim.keymap.set('t', '<M-h>', [[<C-\><C-n><C-w>h]], { noremap = true }) -- Move left
+vim.keymap.set('t', '<M-j>', [[<C-\><C-n><C-w>j]], { noremap = true }) -- Move down
+vim.keymap.set('t', '<M-k>', [[<C-\><C-n><C-w>k]], { noremap = true }) -- Move up
+vim.keymap.set('t', '<M-l>', [[<C-\><C-n><C-w>l]], { noremap = true }) -- Move right
 
  -- == === Highlighting === == --
 vim.api.nvim_create_autocmd('TextYankPost', {

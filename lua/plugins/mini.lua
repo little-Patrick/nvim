@@ -8,11 +8,11 @@ return {
 			require("mini.files").setup()
 
 			-- Key mappings
-			vim.keymap.set("n", "<leader>t", function()
+			vim.keymap.set("n", "<leader>=", function()
 				require("mini.files").open()
 			end, { desc = "Open MiniFiles" })
 
-			vim.keymap.set("n", "<leader>T", function()
+			vim.keymap.set("n", "<leader>+", function()
 				require("mini.files").open(vim.fn.expand("%:p:h"))
 			end, { desc = "Open MiniFiles in current file directory" })
 		end,
