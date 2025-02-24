@@ -36,9 +36,6 @@ vim.keymap.set("n", "<M-l>", ":wincmd l<CR>")
 				-- Quick Fix --
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
-				-- == Color == --
-vim.cmd[[colorscheme tokyonight-night]]
-
 
 	 -- == === Terminal === == --
 vim.api.nvim_create_autocmd('TermOpen', {
