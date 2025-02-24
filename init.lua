@@ -55,8 +55,9 @@ vim.keymap.set('t', '<M-h>', [[<C-\><C-n><C-w>h]]) -- Move left
 vim.keymap.set('t', '<M-j>', [[<C-\><C-n><C-w>j]]) -- Move down
 vim.keymap.set('t', '<M-k>', [[<C-\><C-n><C-w>k]]) -- Move up
 vim.keymap.set('t', '<M-l>', [[<C-\><C-n><C-w>l]]) -- Move right
+vim.keymap.set('n', '<leader>q', "<cmd>bd!<CR>") -- Quit easy
 
- -- == === Highlighting === == --
+ -- == === Highlighting === == - 
 vim.api.nvim_create_autocmd('TextYankPost', {
 	desc = 'Highlight when yanking (copying) text',
 	group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true}),

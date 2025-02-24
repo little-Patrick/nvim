@@ -12,7 +12,6 @@ return {
 				-- == Ensure Installed == --
 				ensure_installed = {
 					"lua_ls",
-					"harper_ls",
 					"ts_ls",
 				},
 			})
@@ -37,7 +36,6 @@ return {
 
 			-- == === LSP Server Setup === == --
 			lspconfig.lua_ls.setup { capabilities = capabilities }
---			lspconfig.harper_ls.setup { capabilities = capabilities }
 			lspconfig.ts_ls.setup { capabilities = capabilities }
 --			lspconfig.rubocop.setup { capabilities = capabilities }
 			lspconfig.ruby_lsp.setup { capabilities = capabilities }
@@ -70,7 +68,7 @@ return {
 			end
 
 			-- Apply the `on_attach` function to all LSPs
-			local servers = { "lua_ls", "harper_ls", "ts_ls" }
+			local servers = { "lua_ls", "ts_ls", "remark-language-server" }
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup {
 					capabilities = capabilities,
