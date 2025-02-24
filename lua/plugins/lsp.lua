@@ -37,7 +37,7 @@ return {
 
 			-- == === LSP Server Setup === == --
 			lspconfig.lua_ls.setup { capabilities = capabilities }
-			lspconfig.harper_ls.setup { capabilities = capabilities }
+--			lspconfig.harper_ls.setup { capabilities = capabilities }
 			lspconfig.ts_ls.setup { capabilities = capabilities }
 --			lspconfig.rubocop.setup { capabilities = capabilities }
 			lspconfig.ruby_lsp.setup { capabilities = capabilities }
