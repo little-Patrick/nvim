@@ -47,7 +47,7 @@ return {
 		vim.keymap.set("n", "<C-n", function() harpoon:list():next() end, { desc = "Next Harpoon file" })
 
 		-- Remove the current file from the Harpoon list
-		vim.keymap.set("n", "<leader><leader>r", function()
+		vim.keymap.set("n", "<leader><leader>c", function()
 			local harpoon_list = harpoon:list()
 			local bufnr = vim.api.nvim_get_current_buf()
 			local bufname = vim.api.nvim_buf_get_name(bufnr)

@@ -55,7 +55,7 @@ return {
 				-- Code actions
 				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 				-- Rename symbol
-				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+				vim.keymap.set("n", "<leader>nn", vim.lsp.buf.rename, opts)
 				-- Format document
 				vim.keymap.set("n", "<leader>f", function()
 					vim.lsp.buf.format { async = true }
