@@ -39,6 +39,7 @@ return {
 			lspconfig.ts_ls.setup { capabilities = capabilities }
 --			lspconfig.rubocop.setup { capabilities = capabilities }
 			lspconfig.ruby_lsp.setup { capabilities = capabilities }
+			lspconfig.remark_ls.setup { capabilities = capabilities }
 
 			-- Keymap for LSP functions
 			local on_attach = function(_, bufnr)
@@ -53,11 +54,11 @@ return {
 				-- Show signature help
 				vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, opts)
 				-- Code actions
-				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+				vim.keymap.set("n", "<leader><leader>ca", vim.lsp.buf.code_action, opts)
 				-- Rename symbol
 				vim.keymap.set("n", "<leader>nn", vim.lsp.buf.rename, opts)
 				-- Format document
-				vim.keymap.set("n", "<leader>f", function()
+				vim.keymap.set("n", "<leader><leader>f", function()
 					vim.lsp.buf.format { async = true }
 				end, opts)
 				-- Show diagnostics
@@ -68,7 +69,7 @@ return {
 			end
 
 			-- Apply the `on_attach` function to all LSPs
-			local servers = { "lua_ls", "ts_ls", "remark-language-server" }
+			local servers = { "lua_ls", "ts_ls", "remark_ls" }
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup {
 					capabilities = capabilities,

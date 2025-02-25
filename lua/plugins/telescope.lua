@@ -49,7 +49,7 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		config = function()
 			-- This is your opts table
-			require("telescope").setup ({
+			require("telescope").setup({
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown {
@@ -61,4 +61,3 @@ return {
 		end,
 	}
 }
-
