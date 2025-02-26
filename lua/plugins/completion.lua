@@ -1,22 +1,25 @@
 return {
 	{
 		'saghen/blink.cmp',
-		dependencies = 'rafamadriz/friendly-snippets',
+		dependencies = {
+			'rafamadriz/friendly-snippets',
+			'kristijanhusak/vim-dadbod-completion', -- Add dadbod completion
+		},
 		version = '*',
 		opts = {
 			keymap = { preset = 'default' },
 
 			appearance = {
 				use_nvim_cmp_as_default = true,
-				-- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-				-- Adjusts spacing to ensure icons are aligned
 				nerd_font_variant = 'mono'
 			},
 
-			-- Default list of enabled providers defined so that you can extend it
-			-- elsewhere in your config, without redefining it, due to `opts_extend`
+			-- Add 'dadbod' to the list of completion sources
 			sources = {
-				default = { 'lsp', 'path', 'snippets', 'buffer' },
+				default = { 'lsp', 'path', 'snippets', 'buffer', 'dadbod' },
+				providers = {
+					dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+				},
 			},
 		},
 		opts_extend = { "sources.default" }
