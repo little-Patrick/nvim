@@ -15,7 +15,7 @@ return {
 
 			-- Add 'dadbod' to the list of completion sources
 			sources = {
-				default = { 'lsp', 'path', 'snippets', 'buffer', 'dadbod' },
+				default = { 'lsp', 'path', 'snippets', 'buffer' },
 			},
 		},
 		opts_extend = { "sources.default" }
