@@ -14,4 +14,8 @@ return {
 		-- Your DBUI configuration
 		vim.g.db_ui_use_nerd_fonts = 1
 	end,
+	config = function()
+		vim.g.db_ui_adapter = 'postgresql'
+		vim.g.db_ui_addapter = 'postgres'
+	end
 }
