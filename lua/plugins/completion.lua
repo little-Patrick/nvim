@@ -5,7 +5,7 @@ return {
 			'rafamadriz/friendly-snippets',
 		},
 		version = '*',
-		opts = {
+	opts = {
 			keymap = { preset = 'default' },
 
 			appearance = {
@@ -15,7 +15,7 @@ return {
 
 			-- Add 'dadbod' to the list of completion sources
 			sources = {
-				default = { 'lsp', 'path', 'snippets', 'buffer' },
+				default = { 'lsp', 'path', 'snippets', 'buffer', 'cmdline', 'omni' }
 			},
 		},
 		opts_extend = { "sources.default" }
