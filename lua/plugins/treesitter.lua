@@ -7,6 +7,7 @@ return {
 				modules = {},
 				-- A list of parser names, or "all" (the listed parsers MUST always be installed)
 				ensure_installed = { "c",
+					"http",
 					"lua",
 					"vim",
 					"zig",
@@ -19,7 +20,6 @@ return {
 					"javascript",
 					"html",
 					"css",
-					"http"
 				},
 
 				-- Automatically install missing parsers when entering buffer

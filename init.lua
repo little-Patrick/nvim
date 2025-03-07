@@ -65,5 +65,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 		vim.highlight.on_yank()
 	end,
 })
-
-
+	-- == === Auto save === == --
+require("config.auto-save")

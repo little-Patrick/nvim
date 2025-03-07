@@ -37,10 +37,9 @@ return {
 			-- == === LSP Server Setup === == --
 			lspconfig.lua_ls.setup { capabilities = capabilities }
 			lspconfig.ts_ls.setup { capabilities = capabilities }
---			lspconfig.rubocop.setup { capabilities = capabilities }
+			lspconfig.standardrb.setup { capabilities = capabilities }
 			lspconfig.ruby_lsp.setup { capabilities = capabilities }
-			lspconfig.remark_ls.setup { capabilities = capabilities }
-
+			lspconfig.zls.setup { capabilities = capabilities }
 			-- Keymap for LSP functions
 			local on_attach = function(_, bufnr)
 				local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -50,7 +49,7 @@ return {
 				-- Show references
 				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 				-- Show hover documentation
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+				vim.keymap.set("n", "^", vim.lsp.buf.hover, opts)
 				-- Show signature help
 				vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, opts)
 				-- Code actions
@@ -58,7 +57,7 @@ return {
 				-- Rename symbol
 				vim.keymap.set("n", "<leader>nn", vim.lsp.buf.rename, opts)
 				-- Format document
-				vim.keymap.set("n", "<leader><leader>f", function()
+				vim.keymap.set("n", "<M-f>", function()
 					vim.lsp.buf.format { async = true }
 				end, opts)
 				-- Show diagnostics

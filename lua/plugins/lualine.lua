@@ -4,17 +4,7 @@ return {
 	config = function()
 		require('lualine').setup({
 			options = {
-				theme = 'nightfly',         -- Make sure you have this theme installed
-			},
-			sections = {
-				lualine_x = {
-					"rest", -- Adds rest.nvim env info
-					{
-						"rest",
-						icon = "",
-						color = { fg = "#428890" }
-					}
-				}
+				theme = 'iceberg_dark', -- Make sure you have this theme installed
 			}
 		})
 	end

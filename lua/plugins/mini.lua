@@ -8,46 +8,79 @@ return {
 			require("mini.files").setup()
 
 			-- Key mappings
-			vim.keymap.set("n", "<leader>=", function()
+			vim.keymap.set("n", "<leader>`", function()
 				require("mini.files").open()
 			end, { desc = "Open MiniFiles" })
-
-			vim.keymap.set("n", "<leader>+", function()
-				require("mini.files").open(vim.fn.expand("%:p:h"))
-			end, { desc = "Open MiniFiles in current file directory" })
 		end,
 	},
 	{
-		'echasnovski/mini.move',
+		-- == Move Text == --
+		"echasnovski/mini.move",
 		version = false,
 		config = function()
-			require("mini.move").setup({
+			require("mini.move").setup()
+		end,
+	},
+	{
+		-- == Auto Pairs == --
+		"echasnovski/mini.pairs",
+		version = false,
+		event = "InsertEnter",
+		config = function()
+			require("mini.pairs").setup()
+		end,
+	},
+	{
+		-- == Text Objects == --
+		"echasnovski/mini.ai",
+		version = false,
+		config = function()
+			require("mini.ai").setup()
+		end,
+	},
+	{
+		-- == Commenting == --
+		"echasnovski/mini.comment",
+		version = false,
+		config = function()
+			require("mini.comment").setup()
+		end,
+	},
+	{
+		-- == Text Operations == --
+		"echasnovski/mini.operators",
+		version = false,
+		config = function()
+			require("mini.operators").setup()
+		end,
+	},
+	-- {
+	-- 	-- == Surround Text == --
+	-- 	"echasnovski/mini.surround",
+	-- 	version = false,
+	-- 	config = function()
+	-- 		require("mini.surround").setup()
+	-- 	end,
+	-- },
+	{
+ 	 -- == Text == --
+		"echasnovski/mini.jump",
+		version = false,
+		config = function()
+			require("mini.jump").setup({
 				mappings = {
-					left       = "<M-z-l>",
-					right      = "<M-z-h>",
-					down       = "<M-z-j>",
-					up         = "<M-z-k>",
-					line_left  = "<M-z-l>",
-					line_right = "<M-z-h>",
-					line_down  = "<M-z-j>",
-					line_up    = "<M-z-k>",
+					forward = "E", -- Change `s` to `E` for forward jump
+					backward = "B", -- Change `S` to `B` for backward jump
 				},
 			})
 		end,
 	},
 	{
-	"echasnovski/mini.pairs",
+	-- == Smooth Animations == --
+	"echasnovski/mini.animate",
 	version = false,
-	event = "InsertEnter",
 	config = function()
-		require("mini.pairs").setup()
+		require("mini.animate").setup()
 	end,
-	},
-	{ 'echasnovski/mini.ai',        version = false },
-	{ 'echasnovski/mini.comment',   version = false },
-	{ 'echasnovski/mini.operators', version = false },
---	{ 'echasnovski/mini.splitjoin', version = false },
-	{ 'echasnovski/mini.surround',  version = false },
-	{ 'echasnovski/mini.jump',      version = false },
-	{ 'echasnovski/mini.animate',   version = false },
+},
 }
