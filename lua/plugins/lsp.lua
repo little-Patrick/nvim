@@ -57,7 +57,7 @@ return {
 				-- Rename symbol
 				vim.keymap.set("n", "<leader>nn", vim.lsp.buf.rename, opts)
 				-- Format document
-				vim.keymap.set("n", "<M-f>", function()
+				vim.keymap.set("n", "<leader>-|>", function()
 					vim.lsp.buf.format { async = true }
 				end, opts)
 				-- Show diagnostics

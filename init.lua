@@ -25,10 +25,10 @@ vim.api.nvim_set_keymap('v', '<Space>', '', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ev", vim.cmd.Ex)
 
 				-- Window Navigation --
-vim.keymap.set("n", "<M-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<M-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<M-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<M-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { silent = true })
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { silent = true })
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { silent = true })
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { silent = true })
 
 				-- Quick Fix --
 -- vim.keymap.set("n", "<>", "<cmd>cnext<CR>")
