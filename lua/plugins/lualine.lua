@@ -4,8 +4,9 @@ return {
 	config = function()
 		require('lualine').setup({
 			options = {
-				theme = 'iceberg_dark', -- Make sure you have this theme installed
+				theme = 'tokyonight', -- Make sure you have this theme installed
 			}
 		})
 	end
 }
+-- iceberg_dark

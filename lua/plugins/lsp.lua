@@ -37,7 +37,7 @@ return {
 			-- == === LSP Server Setup === == --
 			lspconfig.lua_ls.setup { capabilities = capabilities }
 			lspconfig.ts_ls.setup { capabilities = capabilities }
-			lspconfig.standardrb.setup { capabilities = capabilities }
+			-- lspconfig.standardrb.setup { capabilities = capabilities }
 			lspconfig.ruby_lsp.setup { capabilities = capabilities }
 			lspconfig.zls.setup { capabilities = capabilities }
 			-- Keymap for LSP functions
@@ -57,7 +57,7 @@ return {
 				-- Rename symbol
 				vim.keymap.set("n", "<leader>nn", vim.lsp.buf.rename, opts)
 				-- Format document
-				vim.keymap.set("n", "<leader>-|>", function()
+				vim.keymap.set("n", "<leader>|", function()
 					vim.lsp.buf.format { async = true }
 				end, opts)
 				-- Show diagnostics
