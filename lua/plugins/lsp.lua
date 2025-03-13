@@ -40,6 +40,7 @@ return {
 			-- lspconfig.standardrb.setup { capabilities = capabilities }
 			lspconfig.ruby_lsp.setup { capabilities = capabilities }
 			lspconfig.zls.setup { capabilities = capabilities }
+			lspconfig.gopls.setup { capabilities = capabilities }
 			-- Keymap for LSP functions
 			local on_attach = function(_, bufnr)
 				local opts = { noremap = true, silent = true, buffer = bufnr }
