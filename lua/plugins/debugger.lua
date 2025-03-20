@@ -8,22 +8,26 @@ return {
     "przepompownia/nvim-dap-tab",
     "LiadOz/nvim-dap-repl-highlights",
     "nyngwang/NeoZoom.lua",
-    "nvim-neotest/nvim-nio"
+    "nvim-neotest/nvim-nio",
+		"leoluz/nvim-dap-go",
+		"williamboman/mason.nvim",
   },
   config = function()
     local dap, dapui = require("dap"), require("dapui")
     -- Only set up dapui, not dap itself, as dap doesn't have a `setup` function
     dapui.setup()
-    require("nvim-dap-virtual-text").setup()
+    require("nvim-dap-virtual-text").setup({})
     require("persistent-breakpoints").setup { load_breakpoints_event = { "BufReadPost" } }
     require("nvim-dap-repl-highlights").setup()
     require("neo-zoom").setup()
     require("telescope").load_extension("dap")
     require("dap-tab").setup()
+    require("dap-go").setup()
+
     -- Optional: Keymaps for better UX
     -- vim.keymap.set("n", "<leader>dt", require("dap-tab").toggle, { desc = "Toggle DAP Tab" })
-    vim.keymap.set("n", "<leader>d=", require("dap-tab").verboseGoToDebugWin, { desc = "Go to Debug Win" })
-    vim.keymap.set("n", "<leader>d-", require("dap-tab").closeDebugWin, { desc = "Close Debug Win" })
+    vim.keymap.set("n", "<leader>dw", require("dap-tab").verboseGoToDebugWin, { desc = "Go to Debug Win" })
+    vim.keymap.set("n", "<leader>dq", require("dap-tab").closeDebugWin, { desc = "Close Debug Win" })
     vim.keymap.set("n", "<leader>du", require("dapui").toggle, { desc = "Toggle DAP UI" })
     vim.keymap.set("n", "<leader>dvt", require("nvim-dap-virtual-text").toggle, { desc = "Toggle DAP Virtual Text" })
     vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)

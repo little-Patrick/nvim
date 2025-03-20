@@ -5,4 +5,3 @@ vim.keymap.set("n", "<leader>R", ":.w !pytest --trace %<CR>", { silent = true })
 vim.keymap.set("v", "<leader>R", ":'<,'>w !python3<CR>", { silent = true }) -- Run selected lines in visual mode
 
 vim.keymap.set("n", "<leader>c", "oipdb.set_trace()<Esc>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>C", "oconsole.log();<Esc>hi", { noremap = true, silent = true })

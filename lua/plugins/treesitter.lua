@@ -18,8 +18,10 @@ return {
 					"ruby",
 					"typescript",
 					"javascript",
+					"query",
 					"html",
 					"css",
+					"go",
 				},
 
 				-- Automatically install missing parsers when entering buffer

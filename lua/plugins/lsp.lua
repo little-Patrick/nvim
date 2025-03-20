@@ -37,7 +37,6 @@ return {
 			-- == === LSP Server Setup === == --
 			lspconfig.lua_ls.setup { capabilities = capabilities }
 			lspconfig.ts_ls.setup { capabilities = capabilities }
-			-- lspconfig.standardrb.setup { capabilities = capabilities }
 			lspconfig.ruby_lsp.setup { capabilities = capabilities }
 			lspconfig.zls.setup { capabilities = capabilities }
 			lspconfig.gopls.setup { capabilities = capabilities }
@@ -69,7 +68,7 @@ return {
 			end
 
 			-- Apply the `on_attach` function to all LSPs
-			local servers = { "lua_ls", "ts_ls", "remark_ls" }
+			local servers = { "lua_ls", "ts_ls" }
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup {
 					capabilities = capabilities,

@@ -16,6 +16,8 @@ vim.opt.guicursor = ""
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.updatetime = 50
+vim.o.signcolumn = "yes"
+
 
 			-- == Key Map == --
 vim.g.mapleader = " "
