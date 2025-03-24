@@ -25,7 +25,6 @@ return {
 		require("dap-go").setup()
 
 		-- Optional: Keymaps for better UX
-		-- vim.keymap.set("n", "<leader>dt", require("dap-tab").toggle, { desc = "Toggle DAP Tab" })
 		vim.keymap.set("n", "<leader>dw", require("dap-tab").verboseGoToDebugWin, { desc = "Go to Debug Win" })
 		vim.keymap.set("n", "<leader>dq", require("dap-tab").closeDebugWin, { desc = "Close Debug Win" })
 		vim.keymap.set("n", "<leader>du", require("dapui").toggle, { desc = "Toggle DAP UI" })
@@ -37,8 +36,8 @@ return {
 		vim.keymap.set("n", "<leader>di", dap.step_into)
 		vim.keymap.set("n", "<leader>dl", dap.step_over)
 		vim.keymap.set("n", "<leader>do", dap.step_out)
-		vim.keymap.set("n", "<leader>dh", dap.step_into)
-		vim.keymap.set("n", "<leader>dr", dap.step_into)
+		vim.keymap.set("n", "<leader>dh", dap.step_back)
+		vim.keymap.set("n", "<leader>dr", dap.restart)
 		-- Eval var under cursor
 		vim.keymap.set("n", "<leader>?", function()
 			require("dapui").eval(nil, { enter = true })
@@ -46,18 +45,14 @@ return {
 		-- Telescope
 		vim.keymap.set("n", "<leader>dt", ":Telescope dap breakpoints<CR>", { desc = "List DAP Breakpoints" })
 		-- NeoZoom
-		vim.keymap.set('n', '<CR>', function()
-			local dap_session = require("dap").session()
-			if dap_session then
-				vim.cmd('NeoZoomToggle')
-			else
-				vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", true)
-			end
-		end, { silent = true, nowait = true })
+		vim.keymap.set('n', '<leader>z', function()
+			vim.cmd('NeoZoomToggle')
+		end, { silent = true })
+		-- dap-ui Reset
+		vim.keymap.set("n", "<leader>dR", function()
+			require("dapui").toggle({ reset = true })
+		end, { desc = "Fix DAP UI Layout" })
 		-- Listeners
-		dap.listeners.after.event_initialized["dap_repl"] = function()
-			require("dap").repl.open()
-		end
 		dap.listeners.before.attach.dapui_config = function()
 			dapui.open()
 		end
@@ -70,5 +65,8 @@ return {
 		dap.listeners.before.event_exited.dapui_config = function()
 			dapui.close()
 		end
+		-- dap.listeners.after.event_initialized["dap_repl"] = function()
+		-- 	require("dap").repl.open()
+		-- end
 	end,
 }
