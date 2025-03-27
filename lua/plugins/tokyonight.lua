@@ -4,7 +4,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			-- style = "night",     -- Choose your style: "storm", "moon", "night", "day"
+			style = "night",     -- Choose your style: "storm", "moon", "night", "day"
 			transparent = true,  -- Enable this to disable setting the background color
 			terminal_colors = true, -- Configure the colors used when opening a `:terminal`
 			styles = {
@@ -32,7 +32,7 @@ return {
 					'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
 					'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
 					'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
-					'EndOfBuffer',
+					'EndOfBuffer', 'Telescope',
 				},
 				-- table: additional groups that should be cleared
 				extra_groups = {},

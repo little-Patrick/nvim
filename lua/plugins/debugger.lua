@@ -10,6 +10,7 @@ return {
 		"nyngwang/NeoZoom.lua",
 		"nvim-neotest/nvim-nio",
 		"leoluz/nvim-dap-go",
+    "suketa/nvim-dap-ruby",
 		"williamboman/mason.nvim",
 	},
 	config = function()
@@ -23,6 +24,8 @@ return {
 		require("telescope").load_extension("dap")
 		require("dap-tab").setup()
 		require("dap-go").setup()
+    require("dap-ruby").setup()
+
 
 		-- Optional: Keymaps for better UX
 		vim.keymap.set("n", "<leader>dw", require("dap-tab").verboseGoToDebugWin, { desc = "Go to Debug Win" })

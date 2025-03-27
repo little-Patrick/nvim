@@ -16,4 +16,4 @@ vim.keymap.set("v", "<leader>R", ":'<,'>w !yaegi<CR>", { silent = true })
 -- Insert a quick fmt.Println() debugging statement
 vim.keymap.set("n", "<leader>c", 'ofmt.Println()<Esc>i', { noremap = true, silent = true })
 -- Insert a runtime.Breakpoint() call for debugging
-vim.keymap.set("n", "<leader>C", 'oruntime.Breakpoint()<Esc>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>b", 'oruntime.Breakpoint()<Esc>', { noremap = true, silent = true })
