@@ -1,4 +1,3 @@
---  require('dapui').open({reset = true})  
 vim.opt_local.shiftwidth = 4
 vim.cmd("set tabstop=4")
 

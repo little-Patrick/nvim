@@ -17,7 +17,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.updatetime = 50
 vim.o.signcolumn = "yes"
-
+vim.opt.showmode = false
 
 			-- == Key Map == --
 vim.g.mapleader = " "
