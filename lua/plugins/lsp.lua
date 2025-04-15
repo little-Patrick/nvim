@@ -38,6 +38,7 @@ return {
 			lspconfig.lua_ls.setup { capabilities = capabilities }
 			lspconfig.ts_ls.setup { capabilities = capabilities }
 			lspconfig.ruby_lsp.setup { capabilities = capabilities }
+			lspconfig.pyright.setup { capabilities = capabilities }
 			-- lspconfig.rufo.setup { capabilities = capabilities }
 			lspconfig.zls.setup { capabilities = capabilities }
 			lspconfig.gopls.setup { capabilities = capabilities }
