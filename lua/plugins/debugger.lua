@@ -1,6 +1,7 @@
 return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
+		"williamboman/mason.nvim",
 		"rcarriga/nvim-dap-ui",
 		"nvim-telescope/telescope-dap.nvim",
 		"theHamsta/nvim-dap-virtual-text",
@@ -11,7 +12,7 @@ return {
 		"nvim-neotest/nvim-nio",
 		"leoluz/nvim-dap-go",
     "suketa/nvim-dap-ruby",
-		"williamboman/mason.nvim",
+		"mfussenegger/nvim-dap-python",
 	},
 	config = function()
 		local dap, dapui = require("dap"), require("dapui")
@@ -25,6 +26,7 @@ return {
 		require("dap-tab").setup()
 		require("dap-go").setup()
     require("dap-ruby").setup()
+		require("dap-python").setup("python3")
 
 
 		-- Optional: Keymaps for better UX

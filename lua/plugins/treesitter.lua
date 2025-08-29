@@ -22,6 +22,7 @@ return {
 					"html",
 					"css",
 					"go",
+					"rust",
 				},
 
 				-- Automatically install missing parsers when entering buffer

@@ -22,7 +22,9 @@ return {
     format = "markdown",
     filetypes = {
       javascript = { "html", "javascript" },
-      ruby = { "ruby", "rails" }
+      ruby = { "ruby", "rails" },
+			python = { "python" },
+			go = { "go" }
     },
     -- use_node = false,
     ensure_installed = {

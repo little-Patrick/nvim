@@ -17,6 +17,14 @@ return {
 			}
 		},
 		config = function()
+			require("tokyonight").setup({
+				on_highlights = function(hl)
+					hl.LineNr = { fg = "#ffffff" }
+					hl.CursorLineNr = { fg = "#ffffff" }
+					hl.WinSeparator = { fg = "#ffffff" }
+					hl.FloatBorder = { fg = "#ffffff" }
+				end,
+			})
 			vim.cmd [[colorscheme tokyonight-night]]
 		end,
 	},
@@ -46,4 +54,3 @@ return {
 }
 
 -- require("transparent").toggle()
-
