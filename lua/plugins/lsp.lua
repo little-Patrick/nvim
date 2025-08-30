@@ -72,7 +72,7 @@ return {
 			end
 
 			-- Apply the `on_attach` function to all LSPs
-			local servers = { "lua_ls", "ts_ls", "gopls", "ruby_lsp", "pyright", "zls", "htmx" }
+			local servers = { "lua_ls", "ts_ls", "gopls", "ruby_lsp", "pyright", "zls", "htmx" , "rust_analyzer"}
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup {
 					capabilities = capabilities,
