@@ -40,11 +40,13 @@ return {
 			lspconfig.ts_ls.setup { capabilities = capabilities }
 			lspconfig.ruby_lsp.setup { capabilities = capabilities }
 			lspconfig.pyright.setup { capabilities = capabilities }
-			-- lspconfig.pylsp.setup { capabilities = capabilities }
+			lspconfig.clangd.setup { capabilities = capabilities }
 			lspconfig.zls.setup { capabilities = capabilities }
 			lspconfig.gopls.setup { capabilities = capabilities }
 			lspconfig.htmx.setup { capabilities = capabilities }
 			lspconfig.rust_analyzer.setup { capabilities = capabilities }
+			-- lspconfig.pylsp.setup { capabilities = capabilities }
+			lspconfig.ast_grep.setup { capabilities = capabilities }
 
 			local on_attach = function(_, bufnr)
 				local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -53,7 +55,7 @@ return {
 				-- Show references
 				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 				-- Show hover documentation
-				vim.keymap.set("n", "^", vim.lsp.buf.hover, opts)
+				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 				-- Show signature help
 				vim.keymap.set("n", "<leader>gh", vim.lsp.buf.signature_help, opts)
 				-- Code actions
@@ -72,7 +74,7 @@ return {
 			end
 
 			-- Apply the `on_attach` function to all LSPs
-			local servers = { "lua_ls", "ts_ls", "gopls", "ruby_lsp", "pyright", "zls", "htmx" , "rust_analyzer"}
+			local servers = { "lua_ls", "ts_ls", "gopls", "ruby_lsp", "pyright", "zls", "htmx" , "rust_analyzer", "clangd", "ast_grep" }
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup {
 					capabilities = capabilities,

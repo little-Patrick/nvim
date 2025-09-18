@@ -1,9 +1,8 @@
 return {
-	-- {
-	-- 	dir = "~/projects/Vimacs/plugins/present.nvim",
-	-- 	-- config = function()
-	-- 	-- 	require "present"
-	-- 	-- end
-	-- },
-	-- -- to run :lua require "present"
+	{
+		-- dir = "~/Documents/projects/neovim/plugins/groundskeeper.nvim/mk8/",
+		dir = "~/Documents/projects/neovim/plugins/groundskeeper.nvim/",
+			config = function()
+			end,
+	}
 }

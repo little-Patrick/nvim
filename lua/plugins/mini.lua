@@ -1,18 +1,18 @@
 return {
-	{
-		-- == File Manager == --
-		"echasnovski/mini.files",
-		version = "*",
-		dependencies = { { "echasnovski/mini.icons", opts = {} } },
-		config = function()
-			require("mini.files").setup()
-
-			-- Key mappings
-			vim.keymap.set("n", "<leader>`", function()
-				require("mini.files").open()
-			end, { desc = "Open MiniFiles" })
-		end,
-	},
+	-- {
+	-- 	-- == File Manager == --
+	-- 	"echasnovski/mini.files",
+	-- 	version = "*",
+	-- 	dependencies = { { "echasnovski/mini.icons", opts = {} } },
+	-- 	config = function()
+	-- 		require("mini.files").setup()
+	--
+	-- 		-- Key mappings
+	-- 		vim.keymap.set("n", "<leader>`", function()
+	-- 			require("mini.files").open()
+	-- 		end, { desc = "Open MiniFiles" })
+	-- 	end,
+	-- },
 	{
 		-- == Move Text == --
 		"echasnovski/mini.move",
